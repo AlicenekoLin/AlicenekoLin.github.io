@@ -10,9 +10,8 @@ function LunchCheckController($scope, $filter) {
   $scope.displayMessage = "";
   $scope.checkButton = function () {
     // Empty item, i.e., , , is not considered as an item towards to the count
-    var actualItems = $scope.userInputLunchItems.split(",")
-    .filter(function (item) {
-      return (item === 0 || item);
+    var actualItems = $scope.userInputLunchItems.split (',').filter(function (item) {
+        return (item.trim()) !== '';
     });
 
     // Display message according to the number of items
